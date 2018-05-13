@@ -1,5 +1,5 @@
  
-# Problem Statement 
+ ## Problem Statement
 
 URL-Lookup-Service
 
@@ -21,7 +21,7 @@ Give some thought to the following:
 
 ==========================================
 
-# Solution
+## Solution
 
 ## Tools
 To implement the  URL Lookup Service, I have selected following Tools
@@ -31,16 +31,16 @@ To implement the  URL Lookup Service, I have selected following Tools
 - Enbeded Tomcat with SpringBoot framework  
 - JUnit Test SpringBoot Test - MockMvc, SpringRunner etc
 
-## Setup
+## Environment Setup
 
-# Development Environment used: macOS 10.12
+## Development Environment used: macOS 10.12
 
 
-# Go to following GitHub Repository for the source code/configuration and download
+- Go to following GitHub Repository for the source code/configuration and download
 
 	https://github.com/rahulda2018/URL-Lookup-Service
 
-# Database: 
+## Database:
 	- Download the Community Edition
 		https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition
 	- Extract the files from the downloaded archive
@@ -58,7 +58,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 
 	- Now make sure mongo db services is running properly
 
-# Download and install Robo 3T(robomongo) or Studio 3t for Mongo DB management tool. 
+## Download and install Robo 3T(robomongo) or Studio 3t for Mongo DB management tool.
 
 	- MongoDB is running on local host on 27017 port
 
@@ -73,14 +73,14 @@ To implement the  URL Lookup Service, I have selected following Tools
 
 
 
-# Install Eclipse Java EE IDE for Web Developers.[Version: Oxygen.3a Release (4.7.3a)]
+## Install Eclipse Java EE IDE for Web Developers.[Version: Oxygen.3a Release (4.7.3a)]
 	
 	- Import the the Spring Boot REST Microservice Application as Maven Project 
 		File -> Import -> Maven Project -> pom.xml
 	
 	- Wait for all dependencies to be downloaded and resolved
 
-# Run the following SpringBootApplication as Java Application
+## Run the following SpringBootApplication as Java Application
 	com.java.app.urllookupservice.UrlLookupServiceApplication
 
 	- Refer application, properties file under src/main/resources folder
@@ -90,14 +90,14 @@ To implement the  URL Lookup Service, I have selected following Tools
 
 	- Embedded tomcat will be running on 9090
 
-# Download Postman or Google Browser to verify the REST APIS
+## Download Postman or Google Browser to verify the REST APIS
 
 	GET /urlinfo/1/{hostname_and_port}/{original_path_and_query_string}
 
 ## REST API GUIDE
 
 
-#Add URL into BlacklistDB 
+## Add URL into BlacklistDB
 =========================
    Request:
 	http://localhost:9090/add-to-blacklist/www.whalidgroup.com/user=rahul&empid=01234
@@ -106,7 +106,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 	{"hostName":"whalidgroup.com","fullURL":"user=rahul&empid=01234","severity":1,"description":"Malicious URL has beed added explicitly"}
 
 
-# URL lookup - malware
+## URL lookup - malware
 ======================
 
    Request:
@@ -115,7 +115,7 @@ To implement the  URL Lookup Service, I have selected following Tools
    Response:
 	{"result":[{"severity":1,"hostName":"whalidgroup.com","full-url":"user=rahul&empid=04123","description":"Malicious URL"}],"success":false,"message":"Malicious URL present in Blacklist DB"}
 
-# URL Lookup - Good URL
+## URL Lookup - Good URL
 =======================
 
    Request:
@@ -124,7 +124,7 @@ To implement the  URL Lookup Service, I have selected following Tools
    Response:
 	{"result":[{"severity":0,"hostName":"google.com","full-url":"user=rahul&empid=04123","description":"URL not found in the database, need to be scanned.."}],"success":true}
 
-# Marking a blacklisted URL as Whitelisted 
+## Marking a blacklisted URL as Whitelisted
 ==========================================
 
    Request:
@@ -133,7 +133,7 @@ To implement the  URL Lookup Service, I have selected following Tools
    Response:
 	{"hostName":"whalidgroup.com","fullURL":"user=rahul&empid=04123","severity":0,"description":"URL has been marked as whitelisted explicitly"}
 
-# Checking URL which are marked as as Whitelisted - now Good URL
+## Checking URL which are marked as as Whitelisted - now Good URL
 ================================================================
 
    Request:
