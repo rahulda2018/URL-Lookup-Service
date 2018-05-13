@@ -41,6 +41,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 	https://github.com/rahulda2018/URL-Lookup-Service
 
 ## Database:
+
 	- Download the Community Edition
 		https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition
 	- Extract the files from the downloaded archive
@@ -98,7 +99,8 @@ To implement the  URL Lookup Service, I have selected following Tools
 
 
 ## Add URL into BlacklistDB
-=========================
+===============================
+
    Request:
 	http://localhost:9090/add-to-blacklist/www.whalidgroup.com/user=rahul&empid=01234
 
@@ -107,7 +109,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 
 
 ## URL lookup - malware
-======================
+============================
 
    Request:
 	http://localhost:9090/urlinfo/1/whalidgroup.com/user=rahul&empid=04123/
@@ -116,7 +118,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 	{"result":[{"severity":1,"hostName":"whalidgroup.com","full-url":"user=rahul&empid=04123","description":"Malicious URL"}],"success":false,"message":"Malicious URL present in Blacklist DB"}
 
 ## URL Lookup - Good URL
-=======================
+==============================
 
    Request:
 	http://localhost:9090/urlinfo/1/www.google.com/user=rahul&empid=04123/
@@ -125,7 +127,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 	{"result":[{"severity":0,"hostName":"google.com","full-url":"user=rahul&empid=04123","description":"URL not found in the database, need to be scanned.."}],"success":true}
 
 ## Marking a blacklisted URL as Whitelisted
-==========================================
+================================================
 
    Request:
 	http://localhost:9090/markAsWhiteListed/whalidgroup.com/user=rahul&empid=04123/
@@ -134,7 +136,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 	{"hostName":"whalidgroup.com","fullURL":"user=rahul&empid=04123","severity":0,"description":"URL has been marked as whitelisted explicitly"}
 
 ## Checking URL which are marked as as Whitelisted - now Good URL
-================================================================
+=============================================================================
 
    Request:
 	http://localhost:9090/urlinfo/1/whalidgroup.com/user=rahul&empid=04123/
@@ -144,7 +146,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 
 
 ## Unit Test Cases
-==================
+====================
 
    Please Go to Eclipse and run the following class as JUnit Test (Run As -> Unit Test)
 	
@@ -152,7 +154,8 @@ To implement the  URL Lookup Service, I have selected following Tools
 
 
 ## Questions: Give some thought to the following:
-=================================================
+======================================================
+
 
 Q1. The size of the URL list could grow infinitely, how might you scale this beyond the memory capacity of the system? 
 
@@ -172,7 +175,6 @@ Answer: Here is the strategy -
   - Unknown URL needs to be analysed if other services doesn’t know the reputation or URL doesn’t match with any access control rule or any other locos data set. 
   - Most of the times, cloud service/other service updates the data once per day depending on the traffic congestion. Auto update might helps with different scheduler (30 mins interval or weekly or day basis), but data should be always current.
  
-	 
 ===================================================
 
 
